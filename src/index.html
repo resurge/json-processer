@@ -2,15 +2,25 @@
   <head>
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+    <title>JSON processer</title>
   </head>
   <body class="container-fluid">
     <h1>JSON processer</h1>
 
-    <textarea name="input" class="col-xs-12 col-sm-4" placeholder="Input JSON"></textarea>
-    <textarea name="func" class="col-xs-12 col-sm-4" placeholder="Processer function"></textarea>
-    <textarea name="output" class="col-xs-12 col-sm-4" placeholder="Output JSON"></textarea>
+    <section class="row col-xs-12">
+      <textarea name="input" class="col-xs-12 col-sm-4" placeholder="Input JSON"></textarea>
+      <textarea name="func" class="col-xs-12 col-sm-4" placeholder="Processer function"></textarea>
+      <textarea name="output" class="col-xs-12 col-sm-4 disabled" placeholder="Output JSON"></textarea>
+    </section>
 
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <section class="row">
+      <div class="col-sm-4 text-center">
+        <button id="prettify-input" class="btn btn-default">Prettify</button>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
   </body>

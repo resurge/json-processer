@@ -1,3 +1,6 @@
+prettifyJson = (json) ->
+  JSON.stringify json, undefined, 2
+
 doConvert = ($input, $func, $output) ->
   func = $func.val()
   input = $input.val()
@@ -8,7 +11,7 @@ doConvert = ($input, $func, $output) ->
     f = eval "(function(json) { #{func} return json; })"
     result = (f json)
     
-    $output.val JSON.stringify result, undefined, 2
+    $output.val prettifyJson result
   catch e
     #do nothing
 
@@ -22,3 +25,6 @@ $ ->
 
   $func.keyup (e) ->
     doConvert $input, $func, $output
+
+  ($ '#prettify-input').click ->
+    $input.val ((prettifyJson $input.val()).replace /\\n/g, "<br>")
