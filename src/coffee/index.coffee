@@ -20,10 +20,7 @@ $ ->
   $func = $ 'textarea[name="func"]'
   $output = $ 'textarea[name="output"]'
 
-  $input.keyup (e) ->
-    doConvert $input, $func, $output
-
-  $func.keyup (e) ->
+  ($ '#run').click ->
     doConvert $input, $func, $output
 
   ($ '#prettify-input').click ->
