@@ -24,10 +24,7 @@
     $input = $('textarea[name="input"]');
     $func = $('textarea[name="func"]');
     $output = $('textarea[name="output"]');
-    $input.keyup(function(e) {
-      return doConvert($input, $func, $output);
-    });
-    $func.keyup(function(e) {
+    ($('#run')).click(function() {
       return doConvert($input, $func, $output);
     });
     return ($('#prettify-input')).click(function() {
