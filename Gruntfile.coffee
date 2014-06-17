@@ -30,9 +30,19 @@ module.exports = (grunt) ->
         options:
           base: "./src"
           port: 8081
+    copy:
+      ghpages:
+        files: [
+          expand: true
+          cwd: 'src'
+          src: ['**.html', 'js/**.js', 'css/**.css']
+          dest: "./gh-pages"
+        ]
 
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks 'grunt-contrib-copy'
 
   grunt.registerTask 'default', ['coffee', 'connect', 'watch']
+  grunt.registerTask 'deploy', ['coffee', 'copy:ghpages'] #todo: push branch
