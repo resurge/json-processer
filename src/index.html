@@ -6,7 +6,20 @@
     <title>JSON processer</title>
   </head>
   <body class="container-fluid">
-    <h1>JSON processer</h1>
+    <header>
+      <h1 class="col-sm-6">JSON processer</h1>
+      <div id="errorMessage" class="col-sm-6 text-danger bg-danger" style="display:none;">
+        <i class="glyphicon glyphicon-warning-sign"></i>
+        <small class="message"></small>
+      </div>
+      <div id="validMessage" class="col-sm-6 text-success bg-success" style="display:none;">
+        <i class="glyphicon glyphicon-ok"></i>
+        Successfully transformed
+      </div>
+
+      <!-- <i class="glyphicon glyphicon-ok hide"></i>
+        <i class="glyphicon glyphicon-warning-sign hide"></i> -->
+    </header>
 
     <section class="row col-xs-12">
       <textarea name="input" class="col-xs-12 col-sm-4" placeholder="Input JSON"></textarea>
