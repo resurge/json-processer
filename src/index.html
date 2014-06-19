@@ -6,22 +6,19 @@
     <title>JSON processer</title>
   </head>
   <body class="container-fluid">
-    <header>
-      <h1 class="col-sm-6">JSON processer</h1>
-      <div id="errorMessage" class="col-sm-6 text-danger bg-danger" style="display:none;">
+    <header class="row">
+      <h1 class="col-sm-5">JSON processer</h1>
+      <div id="errorMessage" class="col-sm-7 text-danger bg-danger" style="display:none;">
         <i class="glyphicon glyphicon-warning-sign"></i>
-        <small class="message"></small>
+        <span class="message"></span>
       </div>
-      <div id="validMessage" class="col-sm-6 text-success bg-success" style="display:none;">
+      <div id="validMessage" class="col-sm-7 text-success bg-success" style="display:none;">
         <i class="glyphicon glyphicon-ok"></i>
         Successfully transformed
       </div>
-
-      <!-- <i class="glyphicon glyphicon-ok hide"></i>
-        <i class="glyphicon glyphicon-warning-sign hide"></i> -->
     </header>
 
-    <section class="row col-xs-12">
+    <section class="row">
       <textarea name="input" class="col-xs-12 col-sm-4" placeholder="Input JSON"></textarea>
       <textarea name="func" class="col-xs-12 col-sm-4" placeholder="Processer function"></textarea>
       <textarea name="output" class="col-xs-12 col-sm-4 disabled" placeholder="Output JSON"></textarea>
