@@ -6,9 +6,19 @@
     <title>JSON processer</title>
   </head>
   <body class="container-fluid">
-    <h1>JSON processer</h1>
+    <header class="row">
+      <h1 class="col-sm-5">JSON processer</h1>
+      <div id="errorMessage" class="col-sm-7 text-danger bg-danger" style="display:none;">
+        <i class="glyphicon glyphicon-warning-sign"></i>
+        <span class="message"></span>
+      </div>
+      <div id="validMessage" class="col-sm-7 text-success bg-success" style="display:none;">
+        <i class="glyphicon glyphicon-ok"></i>
+        Successfully transformed
+      </div>
+    </header>
 
-    <section class="row col-xs-12">
+    <section class="row">
       <textarea name="input" class="col-xs-12 col-sm-4" placeholder="Input JSON"></textarea>
       <textarea name="func" class="col-xs-12 col-sm-4" placeholder="Processer function"></textarea>
       <textarea name="output" class="col-xs-12 col-sm-4 disabled" placeholder="Output JSON"></textarea>
@@ -16,7 +26,8 @@
 
     <section class="row">
       <div class="col-sm-4 text-center">
-        <button id="prettify-input" class="btn btn-default disabled">Prettify</button>
+        <button id="prettify-input" class="btn btn-default">Prettify</button>
+        <button id="show-example" class="btn btn-default">Show example</button>
       </div>
       <div class="col-sm-4 text-center">
         <button id="run" class="btn btn-primary">Run</button>
@@ -28,3 +39,10 @@
     <script type="text/javascript" src="js/index.js"></script>
   </body>
 </html>
+<!--
+TODO: 
+- example
+- README
+  - link to demo page
+  - explanation what it does + how to use
+-->
