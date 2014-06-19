@@ -37,4 +37,5 @@ $ ->
     doConvert $input, $func, $output
 
   ($ '#prettify-input').click ->
-    $input.val ((prettifyJson $input.val()).replace /\\n/g, "<br>")
+    inputJson = JSON.parse $input.val()
+    $input.val prettifyJson inputJson

@@ -8,21 +8,7 @@ header {
 header div {
   line-height: 1em;
   margin: 1em auto;
-  padding: 1em 1em 1em 5em;
+  padding: 1em;
   font-size: 0.9em;
   font-family: monospace;
 }
-/*header div .tooltip-inner {  
-  background-color: #FFD2D2;
-  color: #FF1C1C;
-  border: 1px solid #FFB1B1;
-}
-header div .glyphicon {
-  font-size: 2em;
-}
-header div .glyphicon-ok {
-  color: #0a0;
-}
-header div .glyphicon-warning-sign {
-  color: #e44;
-}*/
