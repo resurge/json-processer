@@ -1,5 +1,3 @@
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=resurge&url=https://github.com/resurge/json-processer&title=json-processer&language=coffeescript&tags=github&category=software)
-[![Fund me on Gittip](https://www.gittip.com/assets/7.0.8/logo.png)](https://www.gittip.com/<your account here>/)
 # JSON Processer
 
 ## Purpose
@@ -18,5 +16,9 @@ A live example [can be found here][gh-pages].
 1. `grunt`
 
 `grunt deploy` builds what you see on the [live example][gh-pages].
+
+## Like this?
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=resurge&url=https://github.com/resurge/json-processer&title=json-processer&language=coffeescript&tags=github&category=software)
+[![Gittip](http://img.shields.io/gittip/JeroenPelgrims.svg)](https://www.gittip.com/JeroenPelgrims/)
 
 [gh-pages]: http://resurge.github.io/json-processer
