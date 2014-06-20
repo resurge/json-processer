@@ -1,24 +1,32 @@
 (function() {
   $(function() {
-    var $errorMessage, $func, $input, $output, $validMessage, doConvert, prettifyJson, showError, showValid;
+    var $defaultMessage, $errorMessage, $func, $input, $output, $validMessage, doConvert, prettifyJson, showError, showInfo, showValid;
     $input = $('textarea[name="input"]');
     $func = $('textarea[name="func"]');
     $output = $('textarea[name="output"]');
-    $errorMessage = $('header div#errorMessage');
-    $validMessage = $('header div#validMessage');
+    $errorMessage = $('div#errorMessage');
+    $validMessage = $('div#validMessage');
+    $defaultMessage = $('div#defaultMessage');
     prettifyJson = function(json) {
       return JSON.stringify(json, void 0, 2);
     };
+    showInfo = function() {
+      $validMessage.hide();
+      $errorMessage.hide();
+      return $defaultMessage.fadeIn();
+    };
     showError = function(error) {
+      $defaultMessage.hide();
       $validMessage.hide();
       $errorMessage.fadeIn();
       return ($errorMessage.find('.message')).html(error);
     };
     showValid = function() {
+      $defaultMessage.hide();
       $errorMessage.hide();
       return $validMessage.fadeIn();
     };
-    doConvert = function($input, $func, $output) {
+    doConvert = function($input, $func, $output, suppressMessage) {
       var e, f, func, input, json, result;
       func = $func.val();
       input = $input.val();
@@ -27,7 +35,9 @@
         f = eval("(function(json) { " + func + " return json; })");
         result = f(json);
         $output.val(prettifyJson(result));
-        return showValid();
+        if (!suppressMessage) {
+          return showValid();
+        }
       } catch (_error) {
         e = _error;
         return showError(e.message);
@@ -94,7 +104,8 @@
           ]
         }
       ]));
-      return ($('#run')).click();
+      doConvert($input, $func, $output, true);
+      return showInfo();
     });
   });
 
