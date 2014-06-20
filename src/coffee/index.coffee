@@ -2,23 +2,31 @@ $ ->
   $input = $ 'textarea[name="input"]'
   $func = $ 'textarea[name="func"]'
   $output = $ 'textarea[name="output"]'
-  $errorMessage = $ 'header div#errorMessage'
-  $validMessage = $ 'header div#validMessage'
+  $errorMessage = $ 'div#errorMessage'
+  $validMessage = $ 'div#validMessage'
+  $defaultMessage = $ 'div#defaultMessage'
 
   prettifyJson = (json) ->
     JSON.stringify json, undefined, 2
 
+  showInfo = ->
+    $validMessage.hide()
+    $errorMessage.hide()
+    $defaultMessage.fadeIn()
+
   showError = (error) ->
-    $validMessage.hide();
+    $defaultMessage.hide()
+    $validMessage.hide()
     $errorMessage.fadeIn()
 
     ($errorMessage.find '.message').html error
 
   showValid = ->
-    $errorMessage.hide();
-    $validMessage.fadeIn();
+    $defaultMessage.hide()
+    $errorMessage.hide()
+    $validMessage.fadeIn()
 
-  doConvert = ($input, $func, $output) ->
+  doConvert = ($input, $func, $output, suppressMessage) ->
     func = $func.val()
     input = $input.val()
 
@@ -29,7 +37,8 @@ $ ->
       result = (f json)
       
       $output.val prettifyJson result
-      showValid()
+      if not suppressMessage
+        showValid()
     catch e
       showError e.message
 
@@ -128,4 +137,5 @@ mammals.species.push({
       )
     ]
 
-    ($ '#run').click()
+    doConvert $input, $func, $output, true
+    showInfo()

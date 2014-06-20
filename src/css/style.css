@@ -2,13 +2,23 @@ textarea {
   height: 80%;
 }
 
-header {
-
-}
-header div {
-  line-height: 1em;
-  margin: 1em auto;
+header .actions {
   padding: 1em;
+}
+section#messages .glyphicon {
+  font-size: 1.5em;
+  display: inline-block;
+  line-height: 1.6em;
+}
+section#messages div span {
+  position: absolute;
+  top: 1em;
+  padding-left: 1em;
+  display: inline-block;
+  line-height: 1em;
   font-size: 0.8em;
   font-family: monospace;
+}
+section#messages div {
+  margin: 1em auto;
 }
